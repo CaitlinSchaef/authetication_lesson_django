@@ -8,3 +8,9 @@ from .serializers import *
 
 # Create your views here.
 
+@api_view(['GET'])
+def get_profile(request):
+    user = request.user
+    profile = user.profile
+    serialized_profile = ProfileSerializer(profile)
+    return Response(serialized_profile.data)
