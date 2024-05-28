@@ -24,5 +24,6 @@ from app_auth.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/', get_profile),
-    path('token/', TokenObtainPairView.as_view)
+    path('token/', TokenObtainPairView.as_view()),
+    path('create_user', create_user)
 ]
